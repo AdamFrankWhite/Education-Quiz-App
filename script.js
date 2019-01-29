@@ -42,7 +42,7 @@ function createQuestion(questionSetCount) {
 		$('.quiz').append('<p class=' + i +'>' + q_set.choices[i] + '</p>')
 	}
 	$('.quiz').append('<button class="next-btn">Next Question</button>')
-	
+
 
 }
 
@@ -64,20 +64,32 @@ $('#go').one('click', function () {
 });
 
 function checkAnswer () {
+	var answer_choices = $('.quiz p');
+	console.log(answer_choices[0])
 	$(document).one('click', 'p', function(event) {       // need to access document and use extra parameter in .on method to listen to dynamically created elements
 		var answer = (event.target).textContent;
-		
+		// if the correct answer chosen, highlighted green and wrong answers highlighted red
 		if (answer == getAnswer(questionSetCount)) {
 			(event.target).setAttribute('class', 'correct')
+			$(event.target).append('<img src="images/correct.jpg" class="float_right" width="35px">')
 			correctAnswers += 1;
-			
+			// if incorrect answer, all wrong answers selected red, correct answer shown in green
 		} else {
+			$('.quiz p').effect('shake', { direction: "right", times: 3, distance: 10}, 300);
 			(event.target).setAttribute('class', 'wrong')
-			// $('p').effect('shake')
-			$('p:not(.3)').attr('class', 'wrong')
-			$('.3').attr('class', 'correct')
-		}
+			for (i=0; i<answer_choices.length; i+=1) {
+				if (answer_choices[i].textContent == getAnswer(questionSetCount)) {
+					answer_choices[i].setAttribute('class', 'correct')
+					$(answer_choices[i]).append('<img src="images/correct.jpg" class="float_right" width="35px">')
+			} else {
+					answer_choices[i].setAttribute('class', 'wrong')
+					$(answer_choices[i]).append('<img src="images/incorrect.jpg" class="float_right" width="40px">')
+			}
+			(event.target).setAttribute('class', 'wrong')
 
+
+		}
+}
 		questionSetCount += 1;
 		console.log(correctAnswers);
 	});
