@@ -6,15 +6,19 @@ body {
 	font-family: Raleway;
 }
 
-h1,
+h1 {
+	text-align: center;
+	font-size: 1.5em;
+}
 h2 {
 	text-align: center;
-
+	font-size: 1.1em;
 }
 
 h3 {
 	display: block;
 	margin-left: 30px;
+	font-size: 0.9em;
 }
 
 .container {
@@ -28,23 +32,25 @@ h3 {
 }
 
 .quiz {
-	width: 50%;
-	min-width: 300px;
+	width: 95%;
+	min-width: 270px;
+	max-width: 800px;
 	margin: auto;
 	margin-top: 60px;
 	border-radius: 5px;
-	height: 400px;
+	height: 390px;
 }
 
 
 .quiz p {
 	display: block;
-	width: 60%;
+	width: 80%;
 	border: 3px black solid;
 	border-radius: 5px;
 	margin: auto;
 	margin-bottom: 10px;
 	padding: 10px;
+	font-size: 0.85em;
 
 }
 
@@ -60,8 +66,10 @@ h3 {
 	margin: auto;
 	margin-bottom: 1.5em;
 	padding: 3px;
+	padding-bottom: 4px;
 	border: 2px lightblue solid;
 	border-radius: 5px;
+	font-size: 0.9em;
 }
 
 .next-btn {
@@ -85,7 +93,53 @@ h3 {
 	border: 3px red solid !important;
 }
 
-img {
+.mark {
 	float: right;
-	margin-top: -3px;
+	margin-top: -3.5px;
+	width: 25px;
+}
+
+.trophy {
+	display: block;
+	margin: auto;
+	width: 150px;
+	border: 10px solid tomato;
+	border-radius: 50%;
+
+}
+
+
+/* ==== Media Queries ===== */
+
+@media (min-width: 500px) {
+	h1 {
+		font-size: 2.5em;
+	}
+	h2 {
+		font-size: 1.5em;
+	}
+
+	h3 {
+		font-size: 1.3em;
+	}
+
+	.quiz {
+		width: 80%;
+		height: 420px;
+	}
+
+	.quiz p {
+		width: 70%;
+		font-size: 1.1em;
+
+	}
+
+	.trophy {
+		width: 275px;
+	}
+
+	.mark {
+		margin-top: -2px;
+	}
+
 }
