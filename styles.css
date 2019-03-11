@@ -4,11 +4,18 @@
 
 body {
 	font-family: Raleway;
+	margin: 0 0;
 }
-
+header {
+	width: 100%;
+	background-color: tomato;
+}
 h1 {
 	text-align: center;
 	font-size: 1.5em;
+	color: white;
+	padding: 1em;
+	margin-top: 0;
 }
 h2 {
 	text-align: center;
@@ -19,11 +26,19 @@ h3 {
 	display: block;
 	margin-left: 30px;
 	font-size: 0.9em;
+	text-decoration: underline;
+}
+.wrapper {
+	width: 250px;
+	border: black solid 4px;
+	margin: auto;
+	border-radius: 10px;
 }
 
 .container {
 	width: 162px;
 	margin: auto;
+	padding-bottom: 1em;
 }
 
 
