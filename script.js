@@ -32,6 +32,18 @@ var punctuation_questions = [ //array of objects as easier to maintain
 		question: "What can we use a colon (:) for?",
 		choices: ["To introduce a list", "To introduce an explanation", "To introduce a quote", "All of the above"],
 		answer: "All of the above"
+	},
+	
+	{
+		question: "What is a cat?",
+		choices: ["some sort of breakfast cereal", "a type of car", "a digging implement", "a furry master"],
+		answer: "a furry master"
+	},
+	
+	{
+		question: "What is a dog?",
+		choices: ["a mode of transport", "man's best friend", "a monetary unit", "our lord and saviour"],
+		answer: "man's best friend"
 	}
 ]
 
@@ -116,7 +128,7 @@ function questionSet () {
 function createQuestion(questionNumber) {
 	let q_set = questionSet()[questionNumber];
 	$('.quiz').append('<h3>' + q_set.question + '</h3>') //create question heading
-	$('.quiz').append('<h4>' + (questionNumber+1) + ' / 5</h4>')
+	$('.quiz').append(`<h4>${questionNumber+1} / ${questionSet().length}</h4>`) // dynamic scorer
 	$('.quiz').append('<div class="choices"></div>') // creating div vital, to make sure only one click allowed for each question attempt
 	for (let i=0; i<q_set.choices.length; i += 1) {
 		$('.quiz .choices').append('<p class=' + i +'>' + q_set.choices[i] + '</p>')
@@ -180,7 +192,7 @@ $('#go').on('click', function () {
 
 
 
-$(document).on('click', '.next-btn', function () {
+$('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on a container of your dynamically added element that is already on the page when you load it, which is why $('.next-btn').on('click', function () {}) doesn't work 
 
 	if (questionNumber != punctuation_questions.length) {
 		$('.quiz').empty();
