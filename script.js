@@ -41,9 +41,27 @@ var punctuation_questions = [ //array of objects as easier to maintain
 	},
 	
 	{
-		question: "What is a dog?",
-		choices: ["a mode of transport", "man's best friend", "a monetary unit", "our lord and saviour"],
-		answer: "man's best friend"
+		question: "Which of these is a vegetable?",
+		choices: ["pelican", "strawberry", "swimming pool", "carrot"],
+		answer: "carrot"
+	},
+	
+	{
+		question: "Spot the punctuation error",
+		choices: ["Piers Morgan is a vile human being.", "Piers Morgan is unattractive: both inside and out.", "Piers Morgan, a poor excuse for a human being, has no soul.", "What is the point of Piers Morgan!"],
+		answer: "What is the point of Piers Morgan!"
+	},
+	
+	{
+		question: "Spot the noun",
+		choices: ["sparrow", "never", "incredible", "surfing"],
+		answer: "sparrow"
+	},
+	
+	{
+		question: "What is a pronoun?",
+		choices: ["a delicacy native to the island of Zanzibar", "a word that takes the place of a noun", "a month of the year", "a unit of speed"],
+		answer: "a word that takes the place of a noun"
 	}
 ]
 
