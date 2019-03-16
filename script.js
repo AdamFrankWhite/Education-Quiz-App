@@ -212,7 +212,7 @@ $('#go').on('click', function () {
 
 $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on a container of your dynamically added element that is already on the page when you load it, which is why $('.next-btn').on('click', function () {}) doesn't work 
 
-	if (questionNumber != punctuation_questions.length) {
+	if (questionNumber != questionSet().length) {
 		$('.quiz').empty();
 		createQuestion(questionNumber);
 
