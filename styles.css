@@ -26,6 +26,7 @@ h2 {
 h3 {
 	display: block;
 	margin-left: 30px;
+	margin-bottom: 0;
 	font-size: 0.9em;
 	text-decoration: underline;
 }
@@ -85,8 +86,7 @@ h3 {
 	display: block;
 	text-align: center;
 	width: 4em;
-	margin: auto;
-	margin-bottom: 1.1em;
+	margin: 0.8em auto;
 	padding: 3px;
 	padding-bottom: 4px;
 	border: 2px lightblue solid;

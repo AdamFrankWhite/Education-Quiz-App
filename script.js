@@ -196,7 +196,8 @@ function checkAnswer () {
 
 
 
-// Click functions - use .one() for single click use, to avoid bug
+// Event Listeners =========
+ 
 $('#go').on('click', function () {
 		$('.quiz').css({"border": "3px black dotted"})
 		$('.quiz').empty();
@@ -225,8 +226,7 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on 
 	}
 
 });
-// TO DO: sort out final score screen DONE
-//media queries, mobile first DONE
+
 
 
 // change answer valuable to dynamic variable DONE
