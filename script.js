@@ -199,7 +199,7 @@ function checkAnswer () {
 // Event Listeners =========
  
 $('#go').on('click', function () {
-		$('.quiz').css({"border": "3px black dotted"})
+		$('.quiz').css({"border": "3px black solid"}) // must set border in JavaScript, else empty border div before script loads
 		$('.quiz').empty();
 
 		questionNumber = 0; //reset question count
