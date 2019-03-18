@@ -55,6 +55,7 @@ h3 {
 }
 
 .quiz {
+	display: table;
 	width: 95%;
 	min-width: 270px;
 	max-width: 800px;
@@ -93,9 +94,13 @@ h3 {
 	font-size: 0.9em;
 }
 
+.quiz p:nth-of-type(4) {
+	margin-bottom: 0;
+}
+
 .next-btn {
 	display: block;
-	margin: auto;
+	margin: 0.5em auto;
 	height: 50px;
 	padding: 0 15px;
 	border-radius: 5px;
