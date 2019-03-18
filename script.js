@@ -199,7 +199,7 @@ function guessAttempt () {
 // Event Listeners =========
  
 $('#go').on('click', function () {
-		$('.quiz').css({"border": "3px black solid"}) // must set border in JavaScript, else empty border div before script loads
+		$('.quiz').css({"border": "3px black solid", "background-color": "white"}) // must set border in JavaScript, else empty border div before script loads
 		$('.quiz').empty();
 
 		questionNumber = 0; //reset question count
@@ -222,7 +222,7 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on 
 		$('.quiz').empty();
 		$('.quiz').append('<h2>Well Done!!!</h2')
 		$('.quiz').append('<img class="trophy" src="images/trophy.jpg" width="200px">') // add conditional to include different ranks
-		$('.quiz').append('<h2>You achieved a score of ' + correctAnswers + '</h2')
+		$('.quiz').append('<h2>Your score: ' + correctAnswers + ' / ' + questionSet().length + '</h2')
 	}
 
 });
