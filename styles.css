@@ -5,7 +5,10 @@
 body {
 	font-family: Raleway;
 	margin: 0 0;
+	background-color: lightgray;
 }
+
+
 header {
 	width: 100%;
 	background-color: tomato;
@@ -32,6 +35,7 @@ h3 {
 }
 .wrapper {
 	width: 250px;
+	background-color: white;
 	border: black solid 4px;
 	margin: 0.25em auto;
 	border-radius: 15px;
@@ -61,7 +65,6 @@ h3 {
 	max-width: 800px;
 	margin: auto;
 	border-radius: 5px;
-	height: 350px;
 }
 
 
@@ -81,6 +84,8 @@ h3 {
 	cursor: pointer;
 	background: lightgray;
 }
+
+
 
 .quiz h4 {
 	display: block;
@@ -142,7 +147,7 @@ h3 {
 		font-size: 2.5em;
 	}
 	h2 {
-		font-size: 1.25em;
+		font-size: 1.5em;
 	}
 
 	h3 {
@@ -151,8 +156,12 @@ h3 {
 
 	.quiz {
 		width: 80%;
-		height: 410px;
+		min-height: 410px;
 
+	}
+	
+	.quiz h2 {
+		font-size: 2.5em;
 	}
 
 	.quiz p {
