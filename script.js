@@ -153,16 +153,16 @@ function createQuestion(questionNumber) {
 	}
 }
 
-function getAnswer(q_num){
-	return questionSet()[q_num].answer
+function checkAnswer(questionNumber){
+	return questionSet()[questionNumber].answer
 }
 
-function checkAnswer () {
+function guessAttempt () {
 	$('.choices').one('click', 'p', function(event) { // targets choices div which includes all answers, selecting p in each one
-		var answer_choices = $('.quiz p');
+		var answerChoices = $('.quiz p');
 		var answer = (event.target).textContent;
 		// if the correct answer chosen, highlighted green and wrong answers highlighted red
-		if (answer == getAnswer(questionNumber)) {
+		if (answer == checkAnswer(questionNumber)) {
 			(event.target).setAttribute('class', 'correct')
 			$(event.target).append('<img class="mark" src="images/correct.jpg">')
 			correctAnswers += 1;
@@ -170,13 +170,13 @@ function checkAnswer () {
 		} else {
 			$('.quiz p').effect('shake', { direction: "right", times: 3, distance: 10}, 300);
 			(event.target).setAttribute('class', 'wrong')
-			for (i=0; i<answer_choices.length; i+=1) {
-				if (answer_choices[i].textContent == getAnswer(questionNumber)) {
-					answer_choices[i].setAttribute('class', 'correct')
-					$(answer_choices[i]).append('<img class="mark" src="images/correct.jpg">')
+			for (i=0; i<answerChoices.length; i+=1) {
+				if (answerChoices[i].textContent == checkAnswer(questionNumber)) {
+					answerChoices[i].setAttribute('class', 'correct')
+					$(answerChoices[i]).append('<img class="mark" src="images/correct.jpg">')
 			} else {
-					answer_choices[i].setAttribute('class', 'wrong')
-					$(answer_choices[i]).append('<img class="mark" src="images/incorrect.jpg">')
+					answerChoices[i].setAttribute('class', 'wrong')
+					$(answerChoices[i]).append('<img class="mark" src="images/incorrect.jpg">')
 			}
 
 
@@ -205,7 +205,7 @@ $('#go').on('click', function () {
 		questionNumber = 0; //reset question count
 		correctAnswers = 0; // reset score
 		createQuestion(questionNumber);
-		checkAnswer();
+		guessAttempt();
 	});
 
 
@@ -217,7 +217,7 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on 
 		$('.quiz').empty();
 		createQuestion(questionNumber);
 
-		checkAnswer(); // need to change to part of main function, with an option only allowing it to be clicked, once answer selected, currently it is simply refreshing the box contents, with the same questions
+		guessAttempt(); // need to change to part of main function, with an option only allowing it to be clicked, once answer selected, currently it is simply refreshing the box contents, with the same questions
 	} else {
 		$('.quiz').empty();
 		$('.quiz').append('<h2>Well Done!!!</h2')
@@ -230,6 +230,6 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on 
 
 
 // change answer valuable to dynamic variable DONE
-// DONE - fix bug when selecting same quiz twice in a row - bug hunting, clicking through all the way to score, and there is no problem. clicking different quizes before finishing, no problem. selecting same quiz twice BEFORE clicking answer , PROBLEM, thus, the problem is with the click function - bug FIXED - instead of p selector, for some reason you were using document, which triggered the checkanswer function everytime you clicked on the document
+// DONE - fix bug when selecting same quiz twice in a row - bug hunting, clicking through all the way to score, and there is no problem. clicking different quizes before finishing, no problem. selecting same quiz twice BEFORE clicking answer , PROBLEM, thus, the problem is with the click function - bug FIXED - instead of p selector, for some reason you were using document, which triggered the guessAttempt function everytime you clicked on the document
 
 }) //  end ready
