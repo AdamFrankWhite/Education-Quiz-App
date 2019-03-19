@@ -209,27 +209,36 @@ $('#go').on('click', function () {
 	});
 
 
-
-
 $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on a container of your dynamically added element that is already on the page when you load it, which is why $('.next-btn').on('click', function () {}) doesn't work 
-
+  let scorePercentage = Math.floor(correctAnswers/questionSet().length * 100);
+  console.log(scorePercentage)
 	if (questionNumber != questionSet().length) {
 		$('.quiz').empty();
 		createQuestion(questionNumber);
 
-		guessAttempt(); // need to change to part of main function, with an option only allowing it to be clicked, once answer selected, currently it is simply refreshing the box contents, with the same questions
+		guessAttempt(); 
 	} else {
-		$('.quiz').empty();
-		$('.quiz').append('<h2>Well Done!!!</h2')
-		$('.quiz').append('<img class="trophy" src="images/trophy.jpg" width="200px">') // add conditional to include different ranks
-		$('.quiz').append('<h2>Your score: ' + correctAnswers + ' / ' + questionSet().length + '</h2')
+      $('.quiz').empty();
+      if (scorePercentage >80) {
+        $('.quiz').append('<h2>Well Done!!!</h2>')
+        $('.quiz').append('<img class="trophy" src="images/gold.jpg" width="200px">')
+      } else if (scorePercentage >= 50) {
+        $('.quiz').append('<h2>Not bad!</h2>')
+        $('.quiz').append('<img class="trophy" src="images/silver.jpg" width="200px">')
+      } else {
+        $('.quiz').append('<h2>Nice try!!!</h2>')
+        $('.quiz').append('<img class="trophy" src="images/bronze.jpg" width="200px">')
+      }
+      $('.quiz').append('<h2>You scored:</h2>' + '<h2>' + correctAnswers + ' / ' + questionSet().length + '</h2') 
+    }		
 	}
+); // end of .quiz event listener
+  
 
-});
+
+}); //  end ready
 
 
-
-// change answer valuable to dynamic variable DONE
 // DONE - fix bug when selecting same quiz twice in a row - bug hunting, clicking through all the way to score, and there is no problem. clicking different quizes before finishing, no problem. selecting same quiz twice BEFORE clicking answer , PROBLEM, thus, the problem is with the click function - bug FIXED - instead of p selector, for some reason you were using document, which triggered the guessAttempt function everytime you clicked on the document
 
-}) //  end ready
+
