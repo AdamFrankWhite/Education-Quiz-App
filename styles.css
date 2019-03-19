@@ -46,9 +46,17 @@ h3 {
 }
 
 .container {
+	display: flex;
 	width: 162px;
 	margin: auto;
 	padding-bottom: 0.75em;
+}
+
+.dropdown {
+	width: 150px;
+	position: relative;
+	font-family: Arial;
+	font-size: 1em;
 }
 
 
@@ -90,7 +98,7 @@ h3 {
 .quiz h4 {
 	display: block;
 	text-align: center;
-	width: 4em;
+	width: 5em;
 	margin: 0.8em auto;
 	padding: 3px;
 	padding-bottom: 4px;
@@ -134,10 +142,11 @@ h3 {
 	display: block;
 	margin: auto;
 	width: 150px;
-	border: 10px solid tomato;
-	border-radius: 50%;
+	border: 5px solid tomato;
+	border-radius: 10px;
 
 }
+
 
 
 /* ==== Media Queries ===== */
@@ -156,14 +165,14 @@ h3 {
 
 	.quiz {
 		width: 80%;
-		min-height: 410px;
+		height: 430px;
 
 	}
 	
 	.quiz h2 {
 		font-size: 2.5em;
 	}
-
+	
 	.quiz p {
 		width: 70%;
 		font-size: 1em;
@@ -181,4 +190,44 @@ h3 {
 		margin-top: -2px;
 	}
 
+}
+
+@media (min-width: 820px) {
+	.quiz {
+		width: 70%;
+		height: 430px;
+
+	}
+	
+	.quiz h2 {
+		font-size: 2.25em;
+	}
+
+	.quiz h3 {
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	.quiz h4 {
+		font-size: 1em;
+		padding: 0.4em;
+	}
+
+	.quiz p {
+		width: 70%;
+		font-size: 1.1m;
+
+	}
+
+	.trophy {
+		width: 225px;
+	}
+
+	.mark {
+		margin-top: -2px;
+	}
+	
+	.next-btn {
+		margin-top: 25px;
+	}
 }
