@@ -2,6 +2,8 @@
 	box-sizing: border-box;
 }
 
+/* ==== Elements ==== */
+
 body {
 	font-family: Raleway;
 	margin: 0 0;
@@ -33,16 +35,19 @@ h3 {
 	font-size: 0.9em;
 	text-decoration: underline;
 }
+
+.wrapper h2 {
+	margin-top: 0.5em;
+}
+
+/* ==== Main Classes ==== */
+
 .wrapper {
 	width: 250px;
 	background-color: white;
 	border: black solid 4px;
 	margin: 0.25em auto;
 	border-radius: 15px;
-}
-
-.wrapper h2 {
-	margin-top: 0.5em;
 }
 
 .container {
@@ -59,22 +64,17 @@ h3 {
 	font-size: 1em;
 }
 
-
-
+/* ==== IDs ==== */
 
 #go {
 	float: right;
 }
 
-.quiz {
-	display: table;
-	width: 95%;
-	min-width: 270px;
-	max-width: 800px;
-	margin: auto;
-	border-radius: 5px;
-}
+/* ==== Quiz ==== */
 
+.quiz {
+	margin: auto;
+}
 
 .quiz p {
 	display: block;
@@ -120,8 +120,6 @@ h3 {
 	background: white;
 	color: black;
 	font-weight: bold;
-
-
 }
 
 .correct {
@@ -147,8 +145,6 @@ h3 {
 
 }
 
-
-
 /* ==== Media Queries ===== */
 
 @media (min-width: 500px) {
@@ -166,7 +162,6 @@ h3 {
 	.quiz {
 		width: 80%;
 		height: 430px;
-
 	}
 	
 	.quiz h2 {
@@ -175,7 +170,7 @@ h3 {
 	
 	.quiz p {
 		width: 70%;
-		font-size: 1em;
+		font-size: 1.25em;
 
 	}
 
@@ -228,6 +223,6 @@ h3 {
 	}
 	
 	.next-btn {
-		margin-top: 25px;
+		margin-top: 18px;
 	}
 }
