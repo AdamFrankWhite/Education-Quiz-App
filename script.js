@@ -44,7 +44,7 @@ function guessAttempt () {
 		} else {
 			$('.quiz p').effect('shake', { direction: "right", times: 3, distance: 10}, 300);
 			(event.target).setAttribute('class', 'wrong')
-			for (i=0; i<answerChoices.length; i+=1) {
+			for (let i=0; i<answerChoices.length; i+=1) {
 				if (answerChoices[i].textContent == checkAnswer(questionNumber)) {
 					answerChoices[i].setAttribute('class', 'correct')
 					$(answerChoices[i]).append('<img class="mark" src="images/correct.jpg">')
@@ -54,13 +54,19 @@ function guessAttempt () {
 			}
 		}
 }
-		questionNumber += 1;
+		
+		
+		// == Append Button ==
 		if (questionNumber < questionSet().length) {
 			$('.quiz').append('<button class="next-btn">NEXT QUESTION</button>') // better design for button to appear after you select answer, not automatically
 
 		} else {
-			$('.quiz').append('<button class="next-btn">Score</button>') // shows results button on final answer select
+			$('.quiz').append('<button class="next-btn">Score</button>') // shows results button after final question
 		}
+		
+		//Increment question count
+		questionNumber += 1;
+		
 	});
 }
 
@@ -77,7 +83,7 @@ $('#go').on('click', function () {
 	});
 
 
-$('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on a container of your dynamically added element that is already on the page when you load it, which is why $('.next-btn').on('click', function () {}) doesn't work 
+$('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() to a container of your dynamically added element that is already on the page when you load it, which is why $('.next-btn').on('click', function () {}) doesn't work 
   let scorePercentage = Math.floor(correctAnswers/questionSet().length * 100);
   console.log(scorePercentage)
 	if (questionNumber != questionSet().length) {
@@ -97,7 +103,7 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() on 
         $('.quiz').append('<h2>Nice try!!!</h2>')
         $('.quiz').append('<img class="trophy" src="images/bronze.jpg" width="200px">')
       }
-      $('.quiz').append('<h2>You scored:</h2>' + '<h2>' + correctAnswers + ' / ' + questionSet().length + '</h2') 
+      $('.quiz').append(`<h2>Score: ${correctAnswers} / ${questionSet().length}</h2`) 
     }		
 	}
 ); // end of .quiz event listener
