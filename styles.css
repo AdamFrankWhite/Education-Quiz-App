@@ -46,7 +46,7 @@ h3 {
 	width: 250px;
 	background-color: white;
 	border: black solid 4px;
-	margin: 0.25em auto;
+	margin: 0.75em auto;
 	border-radius: 15px;
 }
 
@@ -74,6 +74,7 @@ h3 {
 
 .quiz {
 	margin: auto;
+	height: 420px;
 }
 
 .quiz p {
@@ -113,7 +114,7 @@ h3 {
 
 .next-btn {
 	display: block;
-	margin: 0.5em auto;
+	margin: 1em auto;
 	height: 50px;
 	padding: 0 15px;
 	border-radius: 5px;
@@ -161,11 +162,11 @@ h3 {
 
 	.quiz {
 		width: 80%;
-		height: 430px;
+		height: 440px;
 	}
 	
 	.quiz h2 {
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 	
 	.quiz p {
