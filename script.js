@@ -46,10 +46,10 @@ function guessAttempt () {
 			(event.target).setAttribute('class', 'wrong')
 			for (let i=0; i<answerChoices.length; i+=1) {
 				if (answerChoices[i].textContent == checkAnswer(questionNumber)) {
-					answerChoices[i].setAttribute('class', 'correct')
+					$(answerChoices[i]).attr('class', 'correct')
 					$(answerChoices[i]).append('<img class="mark" src="images/correct.jpg">')
 			} else {
-					answerChoices[i].setAttribute('class', 'wrong')
+					$(answerChoices[i]).attr('class', 'wrong')
 					$(answerChoices[i]).append('<img class="mark" src="images/incorrect.jpg">')
 			}
 		}
