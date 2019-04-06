@@ -7,7 +7,7 @@
 body {
 	font-family: Raleway;
 	margin: 0 0;
-	background-color: lightgray;
+	background-color: #efbdbf;
 }
 
 
@@ -17,6 +17,8 @@ header {
 }
 h1 {
 	text-align: center;
+	text-shadow: 2px 2px 8px #FF0000;
+	letter-spacing: 0.35em;
 	font-size: 1.5em;
 	color: white;
 	padding: 0.7em;
@@ -38,6 +40,7 @@ h3 {
 
 .wrapper h2 {
 	margin-top: 0.5em;
+	color: white;
 }
 
 /* ==== Main Classes ==== */
@@ -45,7 +48,8 @@ h3 {
 .wrapper {
 	width: 250px;
 	background-color: white;
-	border: black solid 4px;
+	background-color: #d93036;
+	border: black solid 2px;
 	margin: 0.75em auto;
 	border-radius: 15px;
 }
@@ -189,6 +193,10 @@ h3 {
 }
 
 @media (min-width: 820px) {
+	
+	h1 {
+	font-size: 3em;
+	}
 	.quiz {
 		width: 70%;
 		height: 430px;
