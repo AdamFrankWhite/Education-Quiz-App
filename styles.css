@@ -13,8 +13,9 @@ body {
 
 header {
 	width: 100%;
-	height: 160px;
+	height: 100px;
 	background-color: #d93036;
+	box-shadow: 0 1px 2px black;
 }
 
 h1 {
@@ -35,7 +36,6 @@ h2 {
 h3 {
 	display: block;
 	letter-spacing: 0.05em;
-	text-shadow: 1px 1px;
 	margin-left: 30px;
 	margin-bottom: 0;
 	font-size: 0.9em;
@@ -58,7 +58,7 @@ button {
     background: #0069ed;
     color: #ffffff;
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 0.75em;
     cursor: pointer;
     text-align: center;
     -webkit-appearance: none;
@@ -80,7 +80,7 @@ button:active {
 
 .wrapper {
 	width: 250px;
-	background-color: #d93036;
+	background-color: #a22024;
 	border: black solid 2px;
 	margin: 0.75em auto;
 	border-radius: 15px;
@@ -89,9 +89,8 @@ button:active {
 .tagline {
 	font-family: 'Indie Flower', cursive;
 	background-color: tomato;
-	font-size: 1em;
-	min-width: 170px;
-	width: fit-content;
+	font-size: 0.75em;
+	width: 130px;
 	margin-top: 5px;
 	margin-left: 50%;
 	transform: rotate(-10deg);
@@ -125,13 +124,13 @@ button:active {
 
 .quiz {
 	margin: auto;
-	height: 420px;
+	min-height: 420px;
 }
 
 .quiz p {
 	display: block;
 	width: 80%;
-	border: 2px #67090c solid;
+	border: 2px black solid;
 	border-radius: 5px;
 	margin: auto;
 	margin-bottom: 10px;
@@ -143,14 +142,6 @@ button:active {
 
 }
 
-.quiz p:hover{
-	cursor: pointer;
-	background: orange;
-	letter-spacing: 0.05em;
-	font-weight: bold;
-}
-
-
 .quiz h4 {
 	display: block;
 	text-align: center;
@@ -158,9 +149,14 @@ button:active {
 	margin: 0.8em auto;
 	padding: 3px;
 	padding-bottom: 4px;
-	border: 2px lightblue solid;
+	border: 2px maroon solid;
 	border-radius: 5px;
 	font-size: 0.9em;
+}
+
+.quiz p:hover {
+	cursor: pointer;
+	background: orange;
 }
 
 .quiz p:nth-of-type(4) {
@@ -201,7 +197,7 @@ button:active {
 .trophy {
 	display: block;
 	margin: auto;
-	width: 150px;
+	width: 200px;
 	border: 5px solid tomato;
 	border-radius: 10px;
 
@@ -210,6 +206,9 @@ button:active {
 /* ==== Media Queries ===== */
 
 @media (min-width: 500px) {
+	header {
+		height: 130px;
+	}
 	h1 {
 		font-size: 2.5em;
 	}
@@ -220,10 +219,20 @@ button:active {
 	h3 {
 		font-size: 1.3em;
 	}
+	
+	button {
+    font-size: 0.85em;
+	}
+	
+	.tagline {
+		font-size: 0.85em;
+		min-width: 170px;
+	}
 
 	.quiz {
 		width: 80%;
-		height: 440px;
+		min-height: 440px;
+		margin-bottom: 50px;
 	}
 	
 	.quiz h2 {
@@ -233,7 +242,11 @@ button:active {
 	.quiz p {
 		width: 70%;
 		font-size: 1.25em;
-
+	}
+	
+	.quiz p:hover{
+		letter-spacing: 0.05em;
+		font-weight: bold;
 	}
 
 	.wrapper {
@@ -251,13 +264,28 @@ button:active {
 
 @media (min-width: 820px) {
 	
+	header {
+	width: 100%;
+	height: 160px;
+	background-color: #d93036;
+}
+	
 	h1 {
 	font-size: 3em;
 	}
+	
+	.tagline {
+		font-size: 1em;
+	}
+	
 	.quiz {
 		width: 70%;
 		height: 430px;
 
+	}
+	
+	button {
+    font-size: 1em;
 	}
 	
 	.quiz h2 {
@@ -276,7 +304,7 @@ button:active {
 
 	.quiz p {
 		width: 70%;
-		font-size: 1.1m;
+		font-size: 1.1em;
 
 	}
 
