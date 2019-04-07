@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 // ==== Questions ==== // put in separate script file
-var correctAnswers = 0; // create correct guess counter#
+var correctAnswers = 0; // create correct guess counter
 var questionNumber = 0;
 
 // ===== Functions ===== //
@@ -23,7 +23,7 @@ function createQuestion(questionNumber) {
 	$('.quiz').append(`<h4>${questionNumber+1} / ${questionSet().length}</h4>`) // dynamic scorer
 	$('.quiz').append('<div class="choices"></div>') // creating div vital, to make sure only one click allowed for each question attempt
 	for (let i=0; i<q_set.choices.length; i += 1) {
-		$('.quiz .choices').append('<p class=' + i +'>' + q_set.choices[i] + '</p>')
+		$('.quiz .choices').append('<p>' + q_set.choices[i] + '</p>')
 	}
 }
 
@@ -73,7 +73,7 @@ function guessAttempt () {
 // ==== Event Listeners ====
  
 $('#go').on('click', function () {
-		$('.quiz').css({"border": "3px black solid", "background-color": "white"}) // must set border in JavaScript, else empty border div before script loads
+		$('.quiz').css({"border": "1px black solid", "background-color": "white", "border-radius": "15px", "box-shadow": "7px 7px 5px"}) // must set border in JavaScript, else empty border div before script loads
 		$('.quiz').empty();
 
 		questionNumber = 0; //reset question count
@@ -87,7 +87,10 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() to 
   let scorePercentage = Math.floor(correctAnswers/questionSet().length * 100);
   console.log(scorePercentage)
 	if (questionNumber != questionSet().length) {
-		$('.quiz').empty();
+		$('.quiz').fadeOut(500, function() {
+			$(this).empty().show();
+			
+		});
 		createQuestion(questionNumber);
 
 		guessAttempt(); 
@@ -108,6 +111,7 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() to 
 	}
 ); // end of .quiz event listener
   
+
 
 
 }); //  end ready
