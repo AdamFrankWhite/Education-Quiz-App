@@ -13,28 +13,29 @@ body {
 
 header {
 	width: 100%;
-	background-color: tomato;
+	height: 160px;
+	background-color: #d93036;
 }
+
 h1 {
 	text-align: center;
-	text-shadow: 2px 2px 8px #FF0000;
+	text-shadow: 2px 2px 8px black;
 	letter-spacing: 0.35em;
 	font-size: 1.5em;
 	color: white;
-	padding: 0.7em;
+	padding-top: 0.7em;
 	margin-top: 0;
 	margin-bottom: 0;
 }
 h2 {
 	text-align: center;
-	text-shadow: 1px 1px 4px black;
 	font-size: 1.1em;
 }
 
 h3 {
 	display: block;
 	letter-spacing: 0.05em;
-	text-shadow: 1px 1px 1px;
+	text-shadow: 1px 1px;
 	margin-left: 30px;
 	margin-bottom: 0;
 	font-size: 0.9em;
@@ -44,6 +45,7 @@ h3 {
 .wrapper h2 {
 	margin-top: 0.5em;
 	color: white;
+	text-shadow: 1px 1px 2px black;
 }
 
 button {
@@ -61,9 +63,10 @@ button {
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
+	
 }
 
-button:hover {
+#go:hover {
     background: orange;
 		transition: background 650ms; 
 }
@@ -77,12 +80,25 @@ button:active {
 
 .wrapper {
 	width: 250px;
-	background-color: white;
 	background-color: #d93036;
 	border: black solid 2px;
 	margin: 0.75em auto;
 	border-radius: 15px;
 }
+
+.tagline {
+	font-family: 'Indie Flower', cursive;
+	background-color: tomato;
+	font-size: 1em;
+	min-width: 170px;
+	width: fit-content;
+	margin-top: 5px;
+	margin-left: 50%;
+	transform: rotate(-10deg);
+	border-radius: 2px;
+	box-shadow: 2px 2px 2px;
+}
+
 
 .container {
 	display: flex;
@@ -124,16 +140,15 @@ button:active {
 	background: #16659c;
 	color: white;
 	box-shadow: 1px 1px 1px #67090c;
+
 }
 
 .quiz p:hover{
 	cursor: pointer;
-	background: white;
-	color: black;
+	background: orange;
 	letter-spacing: 0.05em;
 	font-weight: bold;
 }
-
 
 
 .quiz h4 {
@@ -157,10 +172,16 @@ button:active {
 	margin: 1em auto;
 	height: 50px;
 	padding: 0 15px;
+	border: 2px black solid;
 	border-radius: 5px;
-	background: white;
-	color: black;
+	color: white;
 	font-weight: bold;
+	box-shadow: 2px 2px 2px black;
+}
+
+.next-btn:hover {
+	transform: scale(1.1);
+	background: orange;
 }
 
 .correct {
