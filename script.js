@@ -87,12 +87,10 @@ $('.quiz').on('click', '.next-btn', function () {  // You have to bind .on() to 
   let scorePercentage = Math.floor(correctAnswers/questionSet().length * 100);
   console.log(scorePercentage)
 	if (questionNumber != questionSet().length) {
-		$('.quiz').fadeOut(500, function() {
-			$(this).empty().show();
-			
-		});
+	
+		$('.quiz').empty()
 		createQuestion(questionNumber);
-
+	
 		guessAttempt(); 
 	} else {
       $('.quiz').empty();
